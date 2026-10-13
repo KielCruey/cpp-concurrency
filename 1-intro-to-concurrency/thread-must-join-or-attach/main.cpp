@@ -10,6 +10,5 @@ void count() {
 
 int main() {
     std::thread(count);
-
 	return 0;
 }

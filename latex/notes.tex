@@ -1,0 +1,148 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{hyperref} % references to other parts of the paper if clicked
+
+\usepackage{listings} % putting code in paper
+\renewcommand\lstlistingname{Source Code}
+\renewcommand\lstlistlistingname{Source Code}
+
+% code color style
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dred}{rgb}{0.545,0,0}
+\definecolor{dblue}{rgb}{0,0,0.545}
+\definecolor{lgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\lstset{ 
+    backgroundcolor=\color{lgrey},  
+    basicstyle=\footnotesize \ttfamily \color{black} \bfseries,   
+    breakatwhitespace=false,       
+    breaklines=true,               
+    captionpos=b,                   
+    commentstyle=\color{dkgreen},   
+    deletekeywords={...},          
+    escapeinside={\%*}{*)},                  
+    frame=single,                  
+    keywordstyle=\color{purple},  
+    morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit}, 
+    identifierstyle=\color{black},
+    stringstyle=\color{blue},      
+    language=C++,                
+    numbers=right,                 
+    numbersep=5pt,                  
+    numberstyle=\tiny\color{black}, 
+    rulecolor=\color{black},        
+    showspaces=false,               
+    showstringspaces=false,        
+    showtabs=false,                
+    stepnumber=1,                   
+    tabsize=5,                     
+    title=\lstname,                 
+}
+
+% for piece-wise functions
+\usepackage{amsmath}
+
+% decreasing the left and right margins
+\usepackage{blindtext}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,260mm},
+    left=15mm,
+    right=15mm,
+    top=20mm,
+}
+
+\usepackage{graphicx} % can add images to paper
+\usepackage{float} 
+\usepackage{adjustbox} % adjusting pictures
+\graphicspath{ {pictures/} }
+
+\begin{document}
+
+
+
+
+% ============= Mutex =============
+\section{Mutex (\underline{Mut}ual \underline{Ex}clusion)}
+
+\underline{Definition}: class is a synchronization primitive that can be used to protect shared data from being simultaneously accessed by multiple threads.
+
+\noindent \underline{Libraries Required}: $<$mutex$>$
+\subsection{Lock}
+
+\subsection{Try Lock}
+
+\subsection{Unlock}
+
+% ============= Lock Guard(s) =============
+\section{Lock Guard(s)}
+\underline{Definition}: mutex wrapper that provides a convenient RAII-style mechanism for owning a mutex for the duration of a scoped block.
+
+\noindent \underline{Libraries Required}: $<$mutex$>$
+
+\noindent Different types of lock guards:
+\begin{enumerate}
+    \item lock guard
+    \item scoped lock
+    \item unique lock
+    \item shared lock
+\end{enumerate}
+
+% ============= Thread =============
+\section{Thread} \label{sec:thread}
+\underline{Definition}: A lightweight sub-task or flow of control that lives inside a process.
+
+\subsection{Join}
+
+\subsection{Detach}
+
+% ============= JThread =============
+\section{JThread}
+\underline{Definition}: a modern replacement for std::thread that represents a single thread of execution. The "j" stands for joining, which directly highlights its core purpose: it implements the RAII (Resource Acquisition Is Initialization) pattern for managing thread lifecycles.
+
+% ============= Process =============
+\section{Process}
+\underline{Definition}: An active instance of a program with its own isolated memory space and system resources 
+
+% ============= Async =============
+\section{Async}
+\underline{Definition}: a mechanism the function f asynchronously (potentially in a separate thread which may be part of a thread pool) and returns a std::future that will eventually hold the result of that function call.
+
+\subsection{Launch Policy}
+Launch policies allow the programmer when to trigger the async operation(s).
+
+\subsubsection{launch::async}
+Launches a new thread to call your given \textbf{function} as if a thread object 
+
+\subsubsection{launch::deferred}
+Your given \textbf{function} is deferred until the shared state of the returned future is accessed with \underline{wait} or \underline{get} (member functions in a future).
+
+% ============= Future =============
+\section{Future}
+\underline{Definition}:
+
+% ============= Promise =============
+\section{Promise}
+\underline{Definition}:
+
+% ============= Package Task =============
+\section{Package Task}
+\underline{Definition}:
+
+
+% ============= Atomics =============
+\section{Atomics}
+\underline{Definition}:
+
+% ============= Stop Token =============
+\section{Stop Token}
+\underline{Definition}:
+
+% ============= Condition Variables =============
+\section{Condition Variables}
+\underline{Definition}:
+
+\end{document}
