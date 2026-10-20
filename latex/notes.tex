@@ -62,15 +62,13 @@
 
 \begin{document}
 
-
-
-
 % ============= Mutex =============
 \section{Mutex (\underline{Mut}ual \underline{Ex}clusion)}
 
 \underline{Definition}: class is a synchronization primitive that can be used to protect shared data from being simultaneously accessed by multiple threads.
 
-\noindent \underline{Libraries Required}: $<$mutex$>$
+\bigbreak \noindent \underline{Libraries Required}: $<$mutex$>$
+
 \subsection{Lock}
 
 \subsection{Try Lock}
@@ -81,7 +79,7 @@
 \section{Lock Guard(s)}
 \underline{Definition}: mutex wrapper that provides a convenient RAII-style mechanism for owning a mutex for the duration of a scoped block.
 
-\noindent \underline{Libraries Required}: $<$mutex$>$
+\bigbreak \noindent \underline{Libraries Required}: $<$mutex$>$
 
 \noindent Different types of lock guards:
 \begin{enumerate}
@@ -122,27 +120,39 @@ Your given \textbf{function} is deferred until the shared state of the returned 
 
 % ============= Future =============
 \section{Future}
-\underline{Definition}:
+\underline{Definition}: is a class template that acts as a placeholder or a handle for a value (or exception) that will eventually be computed by an asynchronous operation.
+
+\bigbreak \noindent \underline{Libraries Required}: $<$future$>$
 
 % ============= Promise =============
 \section{Promise}
-\underline{Definition}:
+\underline{Definition}: is a mechanism to store a value or an exception that will be asynchronously retrieved by another thread.
+
+\bigbreak \noindent \underline{Libraries Required}: $<$future$>$
 
 % ============= Package Task =============
 \section{Package Task}
-\underline{Definition}:
+\underline{Definition}: class template that wraps any callable target (such as a function, lambda expression, or bind expression) so that its return value or thrown exception can be retrieved asynchronously via a std::future.
+
+\bigbreak \noindent \underline{Libraries Required}: $<$future$>$
 
 
 % ============= Atomics =============
 \section{Atomics}
-\underline{Definition}:
+\underline{Definition}: operations or types that guarantee indivisible execution and inter-thread synchronization without the use of explicit locks (like mutexes).
+
+\bigbreak \noindent \underline{Libraries Required}: $<$atomic$>$
 
 % ============= Stop Token =============
 \section{Stop Token}
-\underline{Definition}:
+\underline{Definition}: is a thread-safe, lightweight C++20 class that provides a read-only view of a shared stop-state to check whether an asynchronous operation or a std::jthread has been asked to stop.
+
+\bigbreak \noindent \underline{Libraries Required}: $<$stop\_token$>$
 
 % ============= Condition Variables =============
 \section{Condition Variables}
-\underline{Definition}:
+\underline{Definition}: a mechanism that allows one or more threads to be suspended (put to sleep) until another thread modifies a shared state and notifies them.
+
+\bigbreak \noindent \underline{Libraries Required}: $<$condition\_variable$>$
 
 \end{document}
